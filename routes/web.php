@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ZeneController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ZeneController::class, 'fooldalview'])->name('lista');
+Route::get('/Zeneszek', [ZeneController::class, 'zeneszekview'])->name('zeneszek');
+Route::get('/ZeneRogzites', [ZeneController::class, 'zenerogzitesview'])->name('zenerogzites');
+Route::get('/Zenelista', [ZeneController::class, 'zenelistaview'])->name('zenelista');
